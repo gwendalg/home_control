@@ -1,0 +1,15 @@
+{% if devices %}
+    {% regroup devices by location as dev_loc_list %}
+    <ul>
+    {% for location in dev_loc_list %}
+        <li>{{ location.grouper }}
+        <ul>
+        {% for item in location.list %}
+            <li><a href="/devices/{{ item.device.id }}/">{{ item.device }}:{{ item.device.power_state }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No devices are available.</p>
+{% endif %}

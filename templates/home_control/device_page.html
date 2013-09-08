@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>device {{ device }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ MEDIA_URL }}home_control.css" />
+    <script type="text/javascript">
+        function autoReload(){
+          if (window.name=='forcereload') {
+             location.reload();
+             window.name='';
+          }
+        }
+    </script>
+</head>
+<body onload=autoReload()>
+    <div id="container">
+        <header>
+            <div class='holder'>
+                <h1>ggnas</h1>
+            </div>
+        </header>
+        <div id="main" role="main">
+            <div class="list-holder">
+                <div class="list">
+                <h1>{{ device }}</h1>
+
+                {% for f, states in features.items %}
+                <div id="items">
+                    <form name="device" action="/devices/{{ device.id }}/set" method="get" class="form-items">
+                    <h2>{{ f }}</h2> 
+                    {% for s, check in states.items %}
+                         <input type="radio" name={{ f.id }} value={{ s.value }} id={{ f.id }}
+                         {% if check %}
+                             checked
+                         {% endif %}
+                         onclick="this.form.submit();"
+                         ><label for={{ f.id }}>{{ s }}</label>
+                    {% endfor %}
+                    </form>
+               </div>
+               {% endfor %}
+               </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

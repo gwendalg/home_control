@@ -1,0 +1,74 @@
+package control;
+
+option py_generic_services = true;
+
+enum DeviceType {
+  DUMMY = 0;
+  ROTEL = 1;
+  EPSON = 2;
+  APC = 3;
+  X10 = 4;
+  PC_WIN = 5;
+  PC_LINUX = 6;
+  UFO = 7;
+  ANTHEM = 8;
+}
+
+enum FeatureType {
+  FEAT_PWR = 0;
+  FEAT_INPUT = 1;
+  FEAT_PERCENT = 2;
+}
+
+message Device {
+  required DeviceType type = 1;
+  optional string port = 2;
+  optional string server = 3;
+  repeated FeatureType features = 4;
+}
+
+enum Setting {
+  POWER_UNK = 0;
+  POWER_ON = 1;
+  POWER_OFF = 2;
+  INPUT_UNK = 3;
+  INPUT_RGB = 4;
+  INPUT_HDMI1 = 5;
+  INPUT_HDMI2 = 6;
+  INPUT_COMPONENT = 7;
+  INPUT_SVIDEO = 8;
+  INPUT_PC = 9;
+  INPUT_DVD = 10;
+  INPUT_CAMERA = 11;
+  INPUT_Q = 12;
+  INPUT_TV = 13;
+}
+
+message GetRequest {
+  required Device device = 1;
+  required FeatureType type = 2;
+}
+
+message GetResponse {
+  required bool result = 1;
+  optional Setting value = 2;
+  optional int32 percent = 3;
+  optional string error = 4;
+}
+
+message SetRequest {
+  required Device device = 1;
+  required FeatureType type = 2;
+  optional Setting value = 3;
+  optional int32 percent = 4;
+}
+
+message SetResponse {
+  required bool result = 1;
+  optional string error = 2;
+}
+
+service ControlService {
+  rpc Get(GetRequest) returns (GetResponse);
+  rpc Set(SetRequest) returns (SetResponse);
+}
