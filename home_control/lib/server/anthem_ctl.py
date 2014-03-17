@@ -15,7 +15,9 @@ log = logging.getLogger(__name__)
 # ESC/VP21 Command Users Guide for Business Projectors
 ANTHEM_PORT_VALUE={ control_pb2.INPUT_PC: 1,
                     control_pb2.INPUT_DVD: 2,
-                    control_pb2.INPUT_TV: 3}
+                    control_pb2.INPUT_XBMC: 3,
+                    control_pb2.INPUT_PIANO: 4,
+                    control_pb2.INPUT_CAST: 5}
 
 ANTHEM_PWR_VALUE={ control_pb2.POWER_OFF: 0,
                    control_pb2.POWER_ON: 1}

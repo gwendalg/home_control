@@ -41,7 +41,9 @@ enum Setting {
   INPUT_DVD = 10;
   INPUT_CAMERA = 11;
   INPUT_Q = 12;
-  INPUT_TV = 13;
+  INPUT_XBMC = 13;
+  INPUT_CAST = 14;
+  INPUT_PIANO = 15;
 }
 
 message GetRequest {

@@ -14,7 +14,7 @@ import logging
 log = logging.getLogger(__name__)
 
 def devices(request):
-    devices = [{ 'device': d, 'location': d.location } for d in Device.objects.filter(hidden=False).order_by('location')]
+    devices = [{ 'device': d, 'location': d.location } for d in Device.objects.filter(hidden=False).order_by('location', 'name')]
     return render_to_response('home_control/devices.html', {'devices': devices})
 
 def device(request, type, device_id):

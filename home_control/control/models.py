@@ -26,7 +26,9 @@ STATES = (
         (control_pb2.INPUT_CAMERA, u'Input Camcorder'),
         (control_pb2.INPUT_DVD, u'Input DVD'),
         (control_pb2.INPUT_Q, u'Input Q'),
-        (control_pb2.INPUT_TV, u'Input TV'))),
+        (control_pb2.INPUT_XBMC, u'Input XBMC'),
+        (control_pb2.INPUT_PIANO, u'Input Piano'),
+        (control_pb2.INPUT_CAST, u'Input Chromecast'))),
 )
 
 DEVICE_TYPES = (
