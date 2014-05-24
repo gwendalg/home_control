@@ -13,6 +13,7 @@ import rotel_ctl
 import x10_ctl
 import ufo_ctl
 import anthem_ctl
+import ippower_ctl
 
 # Configure logging
 log = logging.getLogger(__name__)
@@ -25,7 +26,8 @@ DEVICE_OBJECT = {  control_pb2.DUMMY: dummy_ctl.DummyCtl,
                    control_pb2.PC_WIN:  pc_ctl.PcCtl,
                    control_pb2.PC_LINUX:  pc_ctl.PcCtl,
                    control_pb2.UFO:  ufo_ctl.UfoCtl,
-                   control_pb2.ANTHEM: anthem_ctl.AnthemCtl}
+                   control_pb2.ANTHEM: anthem_ctl.AnthemCtl,
+                   control_pb2.IPPOWER: anthem_ctl.IppowerCtl}
 
 if os.name != 'nt':
     DEVICE_OBJECT[control_pb2.APC] = apc_ctl.ApcCtl

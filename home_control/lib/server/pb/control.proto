@@ -12,6 +12,7 @@ enum DeviceType {
   PC_LINUX = 6;
   UFO = 7;
   ANTHEM = 8;
+  IPPOWER = 9;
 }
 
 enum FeatureType {

@@ -41,6 +41,7 @@ DEVICE_TYPES = (
     (control_pb2.X10, u'X10 Power Controller'),
     (control_pb2.UFO, u'UFO Power Controller'),
     (control_pb2.ANTHEM, u'Anthem Receiver'),
+    (control_pb2.IPPOWER, u'IPPower Controller'),
 )
 
 class FeatureType(models.Model):
