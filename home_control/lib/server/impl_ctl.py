@@ -27,7 +27,7 @@ DEVICE_OBJECT = {  control_pb2.DUMMY: dummy_ctl.DummyCtl,
                    control_pb2.PC_LINUX:  pc_ctl.PcCtl,
                    control_pb2.UFO:  ufo_ctl.UfoCtl,
                    control_pb2.ANTHEM: anthem_ctl.AnthemCtl,
-                   control_pb2.IPPOWER: anthem_ctl.IppowerCtl}
+                   control_pb2.IPPOWER: ippower_ctl.IppowerCtl}
 
 if os.name != 'nt':
     DEVICE_OBJECT[control_pb2.APC] = apc_ctl.ApcCtl

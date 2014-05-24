@@ -99,7 +99,7 @@ class Device(models.Model):
         if not hasattr(self, 'device_class'):
             return
         c = self.device_class
-        if c.device_type.value in [ control_pb2.APC, control_pb2.PC_WIN, control_pb2.PC_LINUX, control_pb2.UFO ]:
+        if c.device_type.value in [ control_pb2.APC, control_pb2.PC_WIN, control_pb2.PC_LINUX, control_pb2.UFO, control_pb2.IPPOWER ]:
             server = 'localhost'
         else:
             server = self.server_name
