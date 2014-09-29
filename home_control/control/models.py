@@ -18,17 +18,17 @@ STATES = (
         (control_pb2.POWER_ON, u'Power On'),
         (control_pb2.POWER_OFF, u'Power Off'))),
     ('Input Controller', (
-        (control_pb2.INPUT_HDMI1, u'Input HDMI 1'),
-        (control_pb2.INPUT_HDMI2, u'Input HDMI 2'),
-        (control_pb2.INPUT_RGB, u'Input RGB'),
-        (control_pb2.INPUT_SVIDEO, u'Input SVideo'),
-        (control_pb2.INPUT_PC, u'Input PC'),
-        (control_pb2.INPUT_CAMERA, u'Input Camcorder'),
-        (control_pb2.INPUT_DVD, u'Input DVD'),
-        (control_pb2.INPUT_Q, u'Input Q'),
-        (control_pb2.INPUT_XBMC, u'Input XBMC'),
-        (control_pb2.INPUT_PIANO, u'Input Piano'),
-        (control_pb2.INPUT_CAST, u'Input Chromecast'))),
+        (control_pb2.INPUT_HDMI1, u'HDMI 1'),
+        (control_pb2.INPUT_HDMI2, u'HDMI 2'),
+        (control_pb2.INPUT_RGB, u'RGB'),
+        (control_pb2.INPUT_SVIDEO, u'SVideo'),
+        (control_pb2.INPUT_PC, u'PC'),
+        (control_pb2.INPUT_CAMERA, u'Camcorder'),
+        (control_pb2.INPUT_DVD, u'DVD'),
+        (control_pb2.INPUT_Q, u'Q'),
+        (control_pb2.INPUT_XBMC, u'XBMC'),
+        (control_pb2.INPUT_PIANO, u'Piano'),
+        (control_pb2.INPUT_CAST, u'Chromecast'))),
 )
 
 DEVICE_TYPES = (
