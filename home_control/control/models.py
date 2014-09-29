@@ -42,6 +42,7 @@ DEVICE_TYPES = (
     (control_pb2.UFO, u'UFO Power Controller'),
     (control_pb2.ANTHEM, u'Anthem Receiver'),
     (control_pb2.IPPOWER, u'IPPower Controller'),
+    (control_pb2.IPMI, u'IPMI Controller'),
 )
 
 class FeatureType(models.Model):
@@ -99,7 +100,7 @@ class Device(models.Model):
         if not hasattr(self, 'device_class'):
             return
         c = self.device_class
-        if c.device_type.value in [ control_pb2.APC, control_pb2.PC_WIN, control_pb2.PC_LINUX, control_pb2.UFO, control_pb2.IPPOWER ]:
+        if c.device_type.value in [ control_pb2.APC, control_pb2.PC_WIN, control_pb2.PC_LINUX, control_pb2.UFO, control_pb2.IPPOWER, control_pb2.IPMI ]:
             server = 'localhost'
         else:
             server = self.server_name

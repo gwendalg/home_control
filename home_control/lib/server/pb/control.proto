@@ -13,6 +13,7 @@ enum DeviceType {
   UFO = 7;
   ANTHEM = 8;
   IPPOWER = 9;
+  IPMI = 10;
 }
 
 enum FeatureType {
